@@ -1,0 +1,52 @@
+package jdbc;
+
+public class ProductVO {
+
+	private int pno; //자동생성
+	private String pname;
+	private int price;
+	private String regdate;
+	private String madeby;
+	
+	//생성자
+	public ProductVO() {}
+	
+	public ProductVO(String pname, int price, String madeby) {
+		this.pname = pname;
+		this.price = price;
+		this.madeby = madeby;
+	}
+	
+	// 상품리스트 -> pno, pname, price
+	public ProductVO(int pno, String pname, int price) {
+		this.pno = pno;
+		this.pname = pname;
+		this.price = price;
+	}
+	
+	// 상품수정 -> pno, pname, price, madeby
+	public ProductVO(int pno, String pname, int price, String madeby) {
+		this(pname, price, madeby);
+		this.pno = pno;
+	}
+	
+	// 상품상세 -> 전부
+	public ProductVO(int pno, String pname, int price, String regdate, String madeby) {
+		this(pno, pname, price, madeby);
+		this.regdate = regdate;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

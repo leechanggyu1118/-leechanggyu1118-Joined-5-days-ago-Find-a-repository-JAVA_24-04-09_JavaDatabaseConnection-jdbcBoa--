@@ -1,0 +1,41 @@
+package jdbcBoard;
+
+import board.Board;
+
+public class BoardVO {
+//	- board 등록
+//	CREATE TABLE board(
+//	bno INT NOT NULL AUTO_INCREMENT,
+//	title VARCHAR(50) NOT NULL,
+//	writer VARCHAR(30) NOT NULL,
+//	content TEXT,
+//	regdate DATETIME DEFAULT NOW(),
+//	moddate DATETIME DEFAULT NOW(),
+//	PRIMARY KEY(bno));
+
+	private int pno;
+	private String title;
+	private String writer;
+	private String content;
+	private String regdate;
+	private String moddate;
+	
+	//생성자
+	public BoardVO() {}
+	
+	//게시판 -> 번호, 작성자, 내용, 게시일, 수정일
+	public BoardVO(int pno, String writer, String content, String regdate, String moddate) {
+		this.pno = pno;
+		this.writer = writer;
+		this.content = content;
+		this.regdate = regdate;
+		this.moddate = moddate;
+		
+	}
+	
+	
+	
+	
+	
+	
+}

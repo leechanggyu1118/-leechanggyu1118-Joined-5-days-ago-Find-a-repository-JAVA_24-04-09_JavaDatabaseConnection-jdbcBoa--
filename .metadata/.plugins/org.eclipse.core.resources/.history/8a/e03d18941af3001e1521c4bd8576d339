@@ -1,0 +1,41 @@
+package wird;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class WordManager {
+
+	public static void main(String[] args) {
+		
+		
+	HashMap<String, String> voka = new HashMap<String, String>();
+		
+	
+	}
+
+	public void insertWord(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void searchWord(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void modifyWord(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void tWord(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void fileWord(Scanner scan) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

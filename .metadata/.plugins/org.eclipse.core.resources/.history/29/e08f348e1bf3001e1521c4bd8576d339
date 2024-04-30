@@ -1,0 +1,49 @@
+package wird;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class WordManager {
+
+	public static void main(String[] args) {
+		
+		
+private	HashMap<String, String> voka = new HashMap<String, String>();
+		
+	
+	}
+
+	public void insertWord(Scanner scan) {
+		// 단어등록
+		System.out.println("단어등록을 시작합니다.");
+		System.out.println("영단어를 입력해주세요.");
+		String a = scan.next();		
+		System.out.println("해석를 입력해주세요.");
+		String b = scan.next();
+		voka.put
+		
+		
+		
+	}
+
+	public void searchWord(Scanner scan) {
+		// 단어검색
+		
+	}
+
+	public void modifyWord(Scanner scan) {
+		// 단어수정
+		
+	}
+
+	public void printWord(Scanner scan) {
+		// 단어출력
+		
+	}
+
+	public void fileWord(Scanner scan) {
+		// 단어파일로 보내기
+		
+	}
+
+}

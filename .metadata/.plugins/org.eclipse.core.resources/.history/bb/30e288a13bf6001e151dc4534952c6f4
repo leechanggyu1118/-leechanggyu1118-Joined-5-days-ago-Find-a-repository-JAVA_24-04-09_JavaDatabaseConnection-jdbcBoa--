@@ -1,0 +1,96 @@
+package jdbcBoard;
+
+
+
+public class BoardVO {
+//	- board 등록
+//	CREATE TABLE board(
+//	bno INT NOT NULL AUTO_INCREMENT,
+//	title VARCHAR(50) NOT NULL,
+//	writer VARCHAR(30) NOT NULL,
+//	content TEXT,
+//	regdate DATETIME DEFAULT NOW(),
+//	moddate DATETIME DEFAULT NOW(),
+//	PRIMARY KEY(bno));
+
+	private int pno;
+	private String title;
+	private String writer;
+	private String content;
+	private String regdate;
+	private String moddate;
+	
+	//생성자
+	public BoardVO() {}
+	
+	//게시판 -> 번호, 작성자, 내용, 게시일, 수정일
+	public BoardVO(int pno, String writer, String content, String regdate, String moddate) {
+		this.pno = pno;
+		this.writer = writer;
+		this.content = content;
+		this.regdate = regdate;
+		this.moddate = moddate;
+	}
+	
+	@Override
+	public String toString() {
+		return "BoardVO [pno=" + pno + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regdate="
+				+ regdate + ", moddate=" + moddate + "]";
+	}
+
+	
+	// getter/setter
+	public int getPno() {
+		return pno;
+	}
+
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+
+	public String getModdate() {
+		return moddate;
+	}
+
+	public void setModdate(String moddate) {
+		this.moddate = moddate;
+	}
+	
+	
+	
+	
+	
+	
+}

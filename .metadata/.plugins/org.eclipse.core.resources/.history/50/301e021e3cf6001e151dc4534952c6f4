@@ -1,0 +1,10 @@
+package jdbcBoard;
+
+import java.util.List;
+
+
+
+public interface Service {
+	List<BoardVO> getList();
+	
+}

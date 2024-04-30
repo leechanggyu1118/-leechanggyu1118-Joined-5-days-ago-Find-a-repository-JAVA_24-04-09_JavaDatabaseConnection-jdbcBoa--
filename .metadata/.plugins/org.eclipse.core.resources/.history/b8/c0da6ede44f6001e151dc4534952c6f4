@@ -1,0 +1,13 @@
+package jdbcBoard;
+
+public interface DAO {
+
+	BoardVO print = null;
+
+	int insert(BoardVO b);
+
+	BoardVO getPrint(int bno);
+
+
+
+}

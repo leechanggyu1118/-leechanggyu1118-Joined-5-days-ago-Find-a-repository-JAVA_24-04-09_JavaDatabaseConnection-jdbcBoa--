@@ -1,0 +1,12 @@
+package jdbcBoard;
+
+import jdbc.ProductController;
+
+public class BoardMin {
+
+	public static void main(String[] args) {
+		new BoardController();
+
+	}
+
+}

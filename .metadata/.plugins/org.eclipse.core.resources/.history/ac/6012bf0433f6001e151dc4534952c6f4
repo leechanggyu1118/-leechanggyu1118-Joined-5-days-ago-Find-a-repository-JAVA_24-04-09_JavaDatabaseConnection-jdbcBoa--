@@ -1,0 +1,24 @@
+package jdbcBoard;
+
+import java.util.Scanner;
+
+public class BoardController {
+
+	private Scanner scan;
+	private Service svc; // interface로 만듦
+	private boolean flag; //종료변수
+	
+	public BoardController() {
+		scan = new Scanner(System.in);
+		svc = new BoardServiceImpl(); //service 구현체
+		flag = true;
+		printMenu();
+	}
+
+	private void printMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

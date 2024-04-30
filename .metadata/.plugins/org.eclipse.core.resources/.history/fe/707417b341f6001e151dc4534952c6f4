@@ -1,0 +1,30 @@
+package jdbcBoard;
+
+import java.util.List;
+
+public class BoardServiceImpl implements Service {
+	private DAO dao; //인터페이스
+	public BoardServiceImpl() {
+		dao = new BoardDAOImpl();//구현체
+	}
+	@Override
+	public List<BoardVO> getList() {
+		System.out.println("list serviceImpl success!!");
+		return null;
+	}
+	@Override
+	public int addBoard(BoardVO b) {
+		System.out.println("add serviceImpl success!!");
+		return dao.insert(b);
+	}
+	@Override
+	public BoardVO getprintBoard() {
+		System.out.println("print serviceImpl success!!");
+		return dao.print;
+	}
+	
+	
+	
+	
+	
+}

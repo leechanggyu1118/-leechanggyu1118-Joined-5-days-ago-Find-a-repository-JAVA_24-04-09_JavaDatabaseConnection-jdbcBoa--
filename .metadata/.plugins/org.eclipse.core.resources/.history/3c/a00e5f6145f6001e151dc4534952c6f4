@@ -1,0 +1,18 @@
+package jdbcBoard;
+
+import java.util.List;
+
+public interface DAO {
+
+	BoardVO print = null;
+	List<BoardVO> getList = null;
+
+	int insert(BoardVO b);
+
+
+
+	BoardVO getSelect(int bno);
+
+
+
+}

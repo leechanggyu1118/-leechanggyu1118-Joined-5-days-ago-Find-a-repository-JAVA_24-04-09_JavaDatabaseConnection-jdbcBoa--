@@ -1,0 +1,8 @@
+package jdbc;
+
+public class ProductServiceImpl implements Service {
+	private DAO dao; //인터페이스
+	public ProductServiceImpl() {
+		dao = new ProductDAOImpl(); //구현체
+	}
+}

@@ -1,0 +1,10 @@
+package jdbcBoard;
+
+import jdbc.ProductServiceImpl;
+
+public class BoardServiceImpl implements Service {
+	private DAO dao; //인터페이스
+	public BoardServiceImpl() {
+		dao = new BoardDAOImpl();//구현체
+	}
+}

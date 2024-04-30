@@ -1,0 +1,48 @@
+package jdbcBoard;
+
+import java.util.List;
+
+public class BoardServiceImpl implements Service {
+	private DAO dao; //인터페이스
+	public BoardServiceImpl() {
+		dao = new BoardDAOImpl();//구현체
+	}
+
+	@Override
+	public int addBoard(BoardVO b) {
+		System.out.println("add serviceImpl success!!");
+		return dao.insert(b);
+	}
+
+	@Override
+	public BoardVO getsearchBoard(int bno) {
+		// TODO Auto-generated method stub
+		return dao.getSelect(bno);
+	}
+
+	@Override
+	public List<BoardVO> getList() {
+		// TODO Auto-generated method stub
+		System.out.println("list serviceImpl success!!");
+		return dao.getList();
+	}
+
+	@Override
+	public BoardVO getremoveBoard(int bno) {
+		// TODO Auto-generated method stub
+		System.out.println("Remove serviceImpl success!!");
+		return dao.getRemove();
+	}
+
+	@Override
+	public int addBoard(int bno) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+	
+	
+	
+	
+}

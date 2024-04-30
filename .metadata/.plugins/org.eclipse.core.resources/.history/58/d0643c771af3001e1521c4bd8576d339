@@ -1,0 +1,22 @@
+package wird;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class WordManager {
+
+	public static void main(String[] args) {
+		
+		
+	HashMap<String, String> voka = new HashMap<String, String>();
+		
+		public void insertWord(Scanner scan) {
+			
+		}
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+package jdbcBoard;
+
+import java.util.List;
+
+
+
+public interface Service {
+
+	int addBoard(int bno);
+
+
+	BoardVO getsearchBoard(int bno);
+
+
+	List<BoardVO> getList();
+
+
+
+
+
+	
+}

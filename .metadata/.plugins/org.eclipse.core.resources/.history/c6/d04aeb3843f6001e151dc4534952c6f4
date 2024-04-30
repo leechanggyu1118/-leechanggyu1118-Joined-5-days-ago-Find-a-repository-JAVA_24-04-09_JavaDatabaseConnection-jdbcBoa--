@@ -1,0 +1,67 @@
+package jdbcBoard;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import jdbc.DatabaseConnection;
+
+public class BoardDAOImpl implements DAO{
+	
+	//DB연결
+	private Connection conn;
+	//sql 구문을 실행시키는 기능을 하는 객체
+	private PreparedStatement pst;
+	//쿼리구문 저장 스트링
+	private String query="";
+	
+	public BoardDAOImpl() {
+		//DBConnection class 생성 (싱글톤)
+		DatabaseConnection dbc = DatabaseConnection.getInstance();
+		conn = dbc.getConnection();
+	}
+
+	@Override
+	public int insert(BoardVO b) {
+		System.out.println("insert DAOImpl success!!");
+		query = "INSERT INTO board(title, writer, content) VALUES(?,?,?)";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setString(1, b.getTitle());
+			pst.setString(2, b.getWriter());
+			pst.setString(3, b.getContent());
+
+			return pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("insert Error!!");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	@Override
+	public BoardVO getPrint(int bno) {
+		System.out.println("insert DAOImpl success!!");
+		query = "SELECT * FROM board WHERE bno=?";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setInt(1, bno);
+		} catch (SQLException e) {
+			System.out.println("print Error!!");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
+
+
+
+
+	
+	
+	
+	
+	
+}

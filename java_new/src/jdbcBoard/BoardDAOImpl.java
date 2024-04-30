@@ -1,0 +1,151 @@
+package jdbcBoard;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import jdbc.DatabaseConnection;
+
+public class BoardDAOImpl implements DAO{
+	
+	//DB연결
+	private Connection conn;
+	//sql 구문을 실행시키는 기능을 하는 객체
+	private PreparedStatement pst;
+	//쿼리구문 저장 스트링
+	private String query="";
+	
+	public BoardDAOImpl() {
+		//DBConnection class 생성 (싱글톤)
+		DatabaseConnection dbc = DatabaseConnection.getInstance();
+		conn = dbc.getConnection();
+	}
+
+	@Override
+	public int insert(BoardVO b) {
+		System.out.println("insert DAOImpl success!!");
+		query = "INSERT INTO board(title, writer, content) VALUES(?,?,?)";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setString(1, b.getTitle());
+			pst.setString(2, b.getWriter());
+			pst.setString(3, b.getContent());
+
+			return pst.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("insert Error!!");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+
+	@Override
+	public BoardVO getSelect(int bno) {
+		System.out.println("insert DAOImpl success!!");
+		query = "SELECT * FROM board WHERE bno=?";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setInt(1, bno);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				return new BoardVO(
+						rs.getInt("bno"),
+						rs.getString("title"),
+						rs.getString("writer"),
+						rs.getString("content"),
+						rs.getString("regdate"),
+						rs.getString("moddate")
+						
+						);
+			}
+		} catch (SQLException e) {
+			System.out.println("print Error!!");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public List<BoardVO> getList() {
+		System.out.println("List Print DAOImpl success!!");
+		query ="SELECT * FROM board ORDER BY bno DESC";
+		List<BoardVO> list = new ArrayList<BoardVO>();
+		try {
+			pst = conn.prepareStatement(query);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				list.add(
+				new BoardVO(
+						rs.getInt("bno"),
+						rs.getString("title"),
+						rs.getString("writer"),
+						rs.getString("content"),
+						rs.getString("regdate"),
+						rs.getString("moddate")
+						));
+			}
+			return list;
+		} catch (SQLException e) {
+			System.out.println("List Print Error!!");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+
+	@Override
+	public int remove(int bno) {
+		System.out.println("Remove Print DAOImpl success!!");
+		query = "Delete FROM board WHERE bno=?";
+		try {
+			pst = conn.prepareStatement(query);
+				pst.setInt(1, bno);
+				return pst.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			System.out.println("List Print Error!!");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	@Override
+	public int modify(BoardVO a) {
+		System.out.println("Modify Print DAOImpl success!!");
+		query = "UPDATE board SET title=?, writer=?, content=?, moddate = now() WHERE bno=?";
+			try {
+				pst = conn.prepareStatement(query);
+				pst.setString(1, a.getTitle());
+				pst.setString(2, a.getWriter());
+				pst.setString(3, a.getContent());
+				pst.setInt(4, a.getBno());
+				return pst.executeUpdate();
+				
+				
+			} catch (SQLException e) {
+				System.out.println("Modify Print Error!!");
+				e.printStackTrace();
+			}
+		
+		return 0;
+	}
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+}
